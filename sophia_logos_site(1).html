@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophia Logos — Arquivo Pessoal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Cormorant+Garamond:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root{
+  --ink:#29211e; --paper:#ded5c6; --paper2:#f1e8d9; --brown:#493b34;
+  --wine:#5c253c; --wine2:#7a3b53; --gold:#a18b68; --line:#7c6a5b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background:
+  radial-gradient(circle at 20% 10%, #302521 0 2px, transparent 3px),
+  radial-gradient(circle at 80% 30%, #3b2d29 0 1px, transparent 2px),
+  linear-gradient(135deg,#171313,#29201e 45%,#181313);
+  font-family:"Cormorant Garamond",serif;
+  min-height:100vh;
+}
+body:before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.16;
+  background-image:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px,#000 5px,transparent 6px);
+  mix-blend-mode:overlay;
+}
+.frame{
+  width:min(1180px,94vw); margin:28px auto; padding:18px;
+  background:#4a2637; border:8px double #1d1716;
+  box-shadow:0 0 0 4px #8d6d79, 0 18px 50px #0009;
+  position:relative;
+}
+.frame:before,.frame:after{
+  content:""; position:absolute; pointer-events:none; opacity:.8;
+  width:90px;height:90px;border:3px dashed #d5b7bf;
+}
+.frame:before{left:-16px;top:-16px;border-right:0;border-bottom:0;border-radius:30px 0 0 0}
+.frame:after{right:-16px;bottom:-16px;border-left:0;border-top:0;border-radius:0 0 30px 0}
+.paper{
+  background:
+   linear-gradient(#00000008 1px,transparent 1px),
+   linear-gradient(90deg,#00000006 1px,transparent 1px),
+   radial-gradient(circle at 70% 20%,#fff5 0 2%,transparent 14%),
+   var(--paper);
+  background-size:8px 8px,8px 8px,100% 100%,auto;
+  border:5px double #332823; box-shadow:inset 0 0 50px #4a332722;
+  padding:14px;
+}
+.header{
+  min-height:145px; display:grid; grid-template-columns:150px 1fr 150px; gap:12px;
+  align-items:center; border:3px double var(--line); padding:12px;
+  background:#29211f; color:#eee4d4; position:relative; overflow:hidden;
+}
+.header .ornament{font-size:52px;text-align:center;color:#c7b99d}
+.title{font-family:"UnifrakturCook",serif;font-size:clamp(42px,7vw,78px);text-align:center;letter-spacing:2px}
+.subtitle{text-align:center;font-style:italic;font-size:18px;color:#d7c6ad}
+.nav{
+  display:flex; flex-wrap:wrap; gap:5px; justify-content:center;
+  margin:14px 0 16px; padding:8px; border:3px double var(--line); background:#241d1b;
+}
+.nav button{
+  border:1px solid #a28f7b; background:#302522; color:#eadfce; padding:11px 18px;
+  font-family:"IM Fell English",serif; letter-spacing:1px; cursor:pointer;
+  transition:.2s; text-transform:uppercase;
+}
+.nav button:hover,.nav button.active{background:var(--wine); transform:translateY(-1px)}
+.layout{display:grid;grid-template-columns:230px 1fr;gap:16px}
+.sidebar,.content{border:3px double var(--line);background:#d7cdbcdd;box-shadow:inset 0 0 35px #49382a22}
+.sidebar{padding:15px}
+.sidebar h3,.section-title{font-family:"IM Fell English",serif;letter-spacing:2px}
+.sidebar h3{text-align:center;margin:0 0 10px}
+.log{font-size:15px;line-height:1.2}
+.log p{margin:10px 0;padding-bottom:9px;border-bottom:1px dotted #796759}
+.candle{font-size:52px;text-align:center;margin:12px 0}
+.mini-card{
+  margin-top:14px;padding:10px;background:#efe5d5;border:1px solid #806d5e;
+  transform:rotate(-1deg);box-shadow:2px 3px 8px #0002
+}
+.content{padding:18px;min-height:600px}
+.tab{display:none;animation:page .35s ease}
+.tab.active{display:block}
+@keyframes page{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.hero{
+  display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:center;
+  background:#eee4d5;border:2px solid #887466;padding:15px;box-shadow:5px 6px 0 #765f5322;
+}
+.portrait{
+  min-height:330px;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(135deg,#332925,#66534b); color:#e9decd; border:8px solid #493a33;
+  outline:2px solid #a89378; font-family:"IM Fell English",serif; position:relative;
+}
+.portrait:before{content:"✦";position:absolute;top:10px;left:15px;color:#cdbb99;font-size:24px}
+.portrait .big{font-family:"UnifrakturCook";font-size:56px}
+.lead{font-size:19px;line-height:1.45}
+.quote{font-style:italic;border-left:4px solid var(--wine);padding:10px 15px;margin:18px 0;background:#f3eadc}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:15px}
+.card{
+  background:#eee5d7;border:1px solid #8a7664;padding:12px;box-shadow:3px 4px 0 #5c463522;
+}
+.card h4{margin:0 0 5px;color:var(--wine);letter-spacing:1px}
+.paper-note{background:#f0e6d5;border:1px solid #8b7766;padding:18px;box-shadow:3px 4px 0 #0002;margin:12px 0}
+.columns{columns:2;column-gap:25px}
+.columns .card{break-inside:avoid;margin-bottom:10px}
+.timeline{border-left:3px solid var(--wine);padding-left:18px}
+.event{position:relative;margin:0 0 22px}
+.event:before{content:"";position:absolute;left:-27px;top:6px;width:11px;height:11px;background:var(--wine);border:2px solid #eadfce}
+.event h4{margin:0;color:var(--wine)}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.photo{
+  background:#eee5d8;padding:8px;border:1px solid #7f6b5b;box-shadow:3px 5px 7px #0003;
+  cursor:pointer; transition:.2s; text-align:center;
+}
+.photo:nth-child(2n){transform:rotate(1.4deg)} .photo:nth-child(3n){transform:rotate(-1.2deg)}
+.photo:hover{transform:scale(1.03) rotate(0);z-index:2}
+.photo .visual{height:135px;background:linear-gradient(135deg,#40312c,#8b7866);display:grid;place-items:center;color:#e9ddcb;font-size:40px}
+.photo small{display:block;padding-top:7px}
+.secret{
+  background:#211b1a;color:#e9decf;border:3px double #816a61;padding:20px;position:relative;
+}
+.redact{background:#090808;color:#090808;padding:0 5px;cursor:pointer;border-bottom:1px solid #6f5960}
+.redact.revealed{color:#e4d6c5;background:#5b273d}
+.lock{color:#cda7b6;letter-spacing:1px}
+.room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.room{
+  min-height:115px;border:2px solid #7c6959;background:#e7dccb;padding:14px;text-align:center;
+  cursor:pointer;box-shadow:3px 4px #0002;transition:.2s
+}
+.room:hover{transform:translateY(-3px);background:#eee5d6}
+.room .icon{font-size:34px}
+.modal{position:fixed;inset:0;background:#120e0ed9;display:none;place-items:center;z-index:10;padding:20px}
+.modal.show{display:grid}
+.modal-box{width:min(650px,94vw);background:#eee5d7;border:6px double #392b27;padding:24px;box-shadow:0 20px 70px #0008}
+.close{float:right;border:0;background:var(--wine);color:white;padding:5px 10px;cursor:pointer}
+footer{text-align:center;padding:18px;color:#e7d8c5;background:#29211f;border-top:3px double #806b5b;margin-top:16px}
+@media(max-width:800px){
+  .layout,.hero{grid-template-columns:1fr}
+  .sidebar{order:2}.header{grid-template-columns:1fr}.header .ornament{display:none}
+  .room-grid{grid-template-columns:1fr 1fr}.columns{columns:1}
+}
+@media(max-width:480px){
+  .frame{width:98vw;margin:8px auto;padding:8px}.paper{padding:7px}.content{padding:10px}
+  .nav button{flex:1 1 42%;padding:9px 6px;font-size:12px}
+  .room-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="frame"><div class="paper">
+<header class="header">
+  <div class="ornament">❦</div>
+  <div><div class="title">Sophia Logos</div><div class="subtitle">"Algumas memórias permanecem mesmo quando alguém já não consegue lembrá-las."</div></div>
+  <div class="ornament">🦋</div>
+</header>
+
+<nav class="nav" id="nav"></nav>
+
+<div class="layout">
+<aside class="sidebar">
+  <h3>DIÁRIO DE LIA</h3>
+  <div class="candle">🕯</div>
+  <div class="log">
+    <p><b>09 de setembro</b><br>O dia em que Sophia veio ao mundo.</p>
+    <p><b>14 de outubro</b><br>Uma memória guardada na biblioteca velha.</p>
+    <p><b>Hoje</b><br>Há coisas que não deveriam ser lembradas.</p>
+  </div>
+  <div class="mini-card">
+    <b>Pequeno lembrete</b><br><br>
+    Acordar antes do alvorecer.<br>
+    Organizar os objetos.<br>
+    Regar as ervas.<br>
+    Anotar os sonhos.
+  </div>
+  <div class="mini-card">
+    <b>Update Log</b>
+    <p>✦ Arquivo de Sophia aberto.</p>
+    <p>✦ Memória desbloqueável.</p>
+    <p>✦ Há algo estranho no poço.</p>
+  </div>
+</aside>
+
+<main class="content">
+<section class="tab active" id="home">
+  <div class="hero">
+    <div class="portrait"><div><div class="big">S</div><div>SOPHIA LOGOS</div><small>✦ 26 anos · Freira ✦</small></div></div>
+    <div>
+      <h2 class="section-title">Bem-vindo ao pequeno arquivo de Lia</h2>
+      <p class="lead">Sophia Logos passou a maior parte de sua vida entre os corredores silenciosos do Convento de Santa Cecília.</p>
+      <p class="lead">Ela aprendeu a reconhecer o cheiro das ervas antes de aprender seus nomes, a acordar antes do alvorecer e a encontrar conforto na repetição das pequenas coisas.</p>
+      <p class="lead">Por muito tempo, sua vida foi simples.</p>
+      <p class="lead">Até que começou a sonhar com coisas que ainda não haviam acontecido.</p>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="card"><h4>DEVOTA</h4>Fé e disciplina fazem parte de sua rotina.</div>
+    <div class="card"><h4>OBSERVADORA</h4>Percebe detalhes que outros deixam passar.</div>
+    <div class="card"><h4>INTUITIVA</h4>Seus sonhos parecem carregar respostas.</div>
+    <div class="card"><h4>RESERVADA</h4>Prefere silêncio a conflitos.</div>
+    <div class="card"><h4>DISCIPLINADA</h4>Rotinas são uma forma de abrigo.</div>
+  </div>
+  <div class="quote">"O que me assusta não é esquecer. É lembrar de algo que nunca aconteceu."</div>
+</section>
+
+<section class="tab" id="perfil">
+  <h2 class="section-title">Perfil de Sophia</h2>
+  <div class="cards">
+    <div class="card"><h4>NOME</h4>Sophia Logos</div><div class="card"><h4>APELIDO</h4>Lia</div>
+    <div class="card"><h4>IDADE</h4>26 anos</div><div class="card"><h4>NASCIMENTO</h4>09 de setembro</div>
+    <div class="card"><h4>ALTURA</h4>1,69 m</div><div class="card"><h4>ORIGEM</h4>Profetizada</div>
+    <div class="card"><h4>OCUPAÇÃO</h4>Freira</div><div class="card"><h4>TEMPERAMENTO</h4>Fleumático-Melancólico</div>
+    <div class="card"><h4>MEDO</h4>Asfixia</div><div class="card"><h4>DESEJO</h4>Compreender o significado de suas visões.</div>
+  </div>
+  <div class="paper-note"><b>Habilidades</b><br>Ervanaria · Cuidados básicos médicos · Memória detalhista</div>
+  <div class="paper-note"><b>Gostos</b><br>Leitura · Outono · Rotina previsível · Cuidados matutinos</div>
+  <div class="paper-note"><b>Desgostos</b><br>Lugares fechados · Conflitos · Sensação de esquecimento · Falta de controle sobre o próprio corpo</div>
+</section>
+
+<section class="tab" id="convento">
+  <h2 class="section-title">Convento de Santa Cecília</h2>
+  <p>Um lugar antigo nas montanhas de Minas Gerais. Para Sophia, o convento não é apenas uma construção: é a casa onde aprendeu a viver.</p>
+  <p><b>Localização:</b> Córrego das Almas, Minas Gerais.</p>
+  <div class="room-grid">
+    <div class="room" data-title="Quarto" data-text="O quarto de Sophia é organizado com precisão. Livros alinhados, objetos em linha reta e um caderno onde sonhos marcantes são registrados."><div class="icon">🛏</div><b>QUARTO</b></div>
+    <div class="room" data-title="Biblioteca" data-text="Estantes de madeira escura, janelas altas e o cheiro de papel antigo. Uma das memórias mais importantes de Sophia aconteceu aqui."><div class="icon">📚</div><b>BIBLIOTECA</b></div>
+    <div class="room" data-title="Pátio" data-text="Sob o ipê-amarelo, Sophia e Madre Helena conversam quase todos os dias. É um dos lugares onde Sophia se sente mais segura."><div class="icon">🌳</div><b>PÁTIO</b></div>
+    <div class="room" data-title="Capela" data-text="Um espaço silencioso onde Sophia encontra disciplina, fé e momentos de introspecção."><div class="icon">🕯</div><b>CAPELA</b></div>
+    <div class="room" data-title="Enfermaria" data-text="Sophia auxilia nos cuidados básicos e utiliza seu conhecimento de ervas medicinais para ajudar as irmãs."><div class="icon">🌿</div><b>ENFERMARIA</b></div>
+    <div class="room" data-title="Jardim" data-text="O jardim guarda ervas, flores secas e caminhos conhecidos. Sophia gosta de saber exatamente onde cada coisa está."><div class="icon">🥀</div><b>JARDIM</b></div>
+  </div>
+</section>
+
+<section class="tab" id="historia">
+  <h2 class="section-title">História — três capítulos</h2>
+  <div class="timeline">
+    <div class="event"><h4>CAPÍTULO I — A CASA</h4><p>Sophia ficou órfã ainda criança e foi acolhida pelo Convento de Santa Cecília. Madre Helena tornou-se sua mãe de criação. Ela cresceu entre corredores antigos, aprendendo plantas medicinais, cuidados, disciplina e paciência. O convento tornou-se tudo aquilo que Sophia conhecia como lar.</p></div>
+    <div class="event"><h4>CAPÍTULO II — A VISÃO</h4><p>Então começaram os sonhos. Primeiro, pequenos detalhes. Depois, uma visão: o convento, um caminho conhecido, a presença de Madre Helena e uma borboleta. Sophia começa a registrar seus sonhos e percebe pequenas coisas que parecem não encaixar.</p></div>
+    <div class="event"><h4>CAPÍTULO III — A DÚVIDA</h4><p>As inconsistências envolvendo Helena são pequenas demais para provar qualquer coisa. Uma lembrança contada de maneira diferente. Uma cor trocada. E, depois de uma visão, Helena pergunta diretamente sobre o "pesadelo com o poço". Sophia nunca contou a ninguém.</p><p><i>A dúvida nasce. Mas o afeto fala mais alto.</i></p></div>
+  </div>
+</section>
+
+<section class="tab" id="personalidade">
+  <h2 class="section-title">Anotações pessoais</h2>
+  <div class="columns">
+    <div class="card"><h4>VIRTUDES</h4>Disciplina e lealdade.</div>
+    <div class="card"><h4>DEFEITOS</h4>Negação protetora e centralização de problemas.</div>
+    <div class="card"><h4>MANIAS</h4>Tocar o pescoço; organizar objetos em linha reta.</div>
+    <div class="card"><h4>HÁBITOS</h4>Anotar sonhos marcantes; acordar antes do alvorecer.</div>
+    <div class="card"><h4>VALORES</h4>Proteção à vida; verdade; memória.</div>
+    <div class="card"><h4>MEDOS</h4>Asfixia; perder o controle sobre o próprio corpo.</div>
+    <div class="card"><h4>CONTRADIÇÃO</h4>Analítica quando observa o mundo; cega quando observa alguém que ama.</div>
+    <div class="card"><h4>DESEJO</h4>Compreender o significado de suas visões.</div>
+  </div>
+</section>
+
+<section class="tab" id="relacoes">
+  <h2 class="section-title">Relações</h2>
+  <div class="paper-note">
+    <h3>☾ Madre Helena — Mãe de Criação</h3>
+    <p>Dedicou mais de quarenta anos à vida religiosa nas montanhas de Minas Gerais. Conhecida por sua serenidade, conhecimento em plantas medicinais e liderança firme, porém acolhedora, do Convento de Santa Cecília. Acolheu Sophia aos sete anos, criando-a como uma filha.</p>
+    <div class="quote">"Madre Helena é a mulher mais sábia, virtuosa e amorosa que já conheci. Ela salvou minha vida quando eu não tinha para onde ir, ensinou-me tudo o que sei sobre cuidado e paciência, e é a única pessoa no mundo que me faz sentir completamente segura."</div>
+  </div>
+  <div class="cards">
+    <div class="card"><h4>01 · O ACOLHIMENTO</h4>Aos 7 anos, Helena acolheu Sophia durante uma noite de tempestade, cobriu-a com uma colcha e cantou até que ela adormecesse.</div>
+    <div class="card"><h4>02 · O CHÁ SOB O IPÊ</h4>Aos 26, as conversas diárias no pátio continuam sendo parte da rotina de Sophia.</div>
+    <div class="card"><h4>03 · O DESLIZE</h4>Helena chamou de azul o cobertor que Sophia recorda como amarelo e vermelho.</div>
+    <div class="card"><h4>04 · O SABER IMPOSSÍVEL</h4>Após uma visão, Helena pergunta sobre o pesadelo com o poço — sem que Sophia tenha contado.</div>
+  </div>
+</section>
+
+<section class="tab" id="memorias">
+  <h2 class="section-title">Álbum de memórias</h2>
+  <div class="photo-grid">
+    <div class="photo" data-title="14 de Outubro — Biblioteca Velha" data-text="Aos 9 anos, Sophia foi encontrada chorando entre as estantes durante uma tempestade. Helena a envolveu em uma colcha xadrez amarelo e vermelho e preparou chá de capim-santo. Foi a noite em que Sophia deixou de se sentir uma órfã abandonada e passou a sentir que tinha uma mãe de verdade."><div class="visual">📚</div><small>14 de outubro · Biblioteca</small></div>
+    <div class="photo" data-title="O Ipê-Amarelo" data-text="O pátio interno tornou-se o lugar das conversas diárias entre Sophia e Helena."><div class="visual">🌳</div><small>Rotina dos 26 anos</small></div>
+    <div class="photo" data-title="Caderno de Sonhos" data-text="Sophia registra sonhos marcantes para tentar compreender o significado de suas visões."><div class="visual">✎</div><small>Memórias recentes</small></div>
+    <div class="photo" data-title="A Colcha" data-text="Amarelo e vermelho. Uma lembrança simples, mas precisa."><div class="visual">▦</div><small>Um detalhe importante</small></div>
+    <div class="photo" data-title="Capim-Santo" data-text="O cheiro do chá permanece associado à sensação de abrigo e segurança."><div class="visual">🌿</div><small>Cheiro de chuva</small></div>
+    <div class="photo" data-title="A Borboleta" data-text="Ela aparece próxima às visões. Seu significado ainda não está claro."><div class="visual">🦋</div><small>Um símbolo recorrente</small></div>
+  </div>
+</section>
+
+<section class="tab" id="galeria">
+  <h2 class="section-title">Galeria</h2>
+  <p>Pequenos recortes do mundo de Sophia.</p>
+  <div class="photo-grid">
+    <div class="photo"><div class="visual">🕯</div><small>Velas da capela</small></div>
+    <div class="photo"><div class="visual">📖</div><small>Livro aberto</small></div>
+    <div class="photo"><div class="visual">🌿</div><small>Ervanaria</small></div>
+    <div class="photo"><div class="visual">🌧</div><small>Chuva na serra</small></div>
+    <div class="photo"><div class="visual">🗝</div><small>Uma chave antiga</small></div>
+    <div class="photo"><div class="visual">🦋</div><small>A borboleta</small></div>
+  </div>
+</section>
+
+<section class="tab" id="segredos">
+  <h2 class="section-title">Arquivos que não deveriam existir</h2>
+  <div class="secret">
+    <p class="lock">NÍVEL DE ACESSO: PARCIAL</p>
+    <p>MEMÓRIA: <span class="redact">14/10 — BIBLIOTECA</span></p>
+    <p>LOCAL: <span class="redact">POÇO DESATIVADO</span></p>
+    <p>TESTEMUNHA: <span class="redact">MADRE HELENA</span></p>
+    <p>IDENTIDADE: <span class="redact">████████████</span></p>
+    <p>STATUS: <span class="redact">INCONCLUSIVO</span></p>
+    <hr>
+    <p><i>Algumas lembranças não falham por serem antigas.</i></p>
+    <p><i>Talvez falhem porque nunca pertenceram a quem as conta.</i></p>
+    <p>✦ Procure a <span class="redact">borboleta</span>.</p>
+    <p>✦ Lembre-se da cor da <span class="redact">colcha</span>.</p>
+    <p>✦ O <span class="redact">poço</span> não está vazio.</p>
+  </div>
+</section>
+</main>
+</div>
+
+<footer>
+  Sophia Logos · Convento de Santa Cecília · Córrego das Almas, Minas Gerais<br>
+  <i>"Algumas memórias são abrigo. Outras são avisos."</i>
+</footer>
+</div></div>
+
+<div class="modal" id="modal"><div class="modal-box">
+<button class="close" onclick="closeModal()">×</button>
+<h2 id="modalTitle"></h2><p id="modalText"></p>
+</div></div>
+
+<script>
+const tabs = [
+  ["HOME","home"],["PERFIL","perfil"],["O CONVENTO","convento"],["HISTÓRIA","historia"],
+  ["PERSONALIDADE","personalidade"],["RELAÇÕES","relacoes"],["MEMÓRIAS","memorias"],
+  ["GALERIA","galeria"],["SEGREDOS","segredos"]
+];
+const nav=document.getElementById("nav");
+tabs.forEach(([label,id],i)=>{
+  const b=document.createElement("button"); b.textContent=label; if(i===0)b.classList.add("active");
+  b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+  nav.appendChild(b);
+});
+const modal=document.getElementById("modal");
+document.querySelectorAll("[data-title]").forEach(el=>el.addEventListener("click",()=>{
+  document.getElementById("modalTitle").textContent=el.dataset.title;
+  document.getElementById("modalText").textContent=el.dataset.text;
+  modal.classList.add("show");
+}));
+function closeModal(){modal.classList.remove("show")}
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+document.querySelectorAll(".redact").forEach(el=>el.addEventListener("click",()=>el.classList.toggle("revealed")));
+</script>
+</body>
+</html>
